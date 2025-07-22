@@ -1,0 +1,182 @@
+:root {
+    --primary: #23272f;
+    --secondary: #f5f6fa;
+    --bg: #181a1b;
+    --white: #fff;
+    --accent: #2d313a;
+    --highlight: #bdbdbd;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #181a1b 0%, #23272f 100%);
+    color: var(--secondary);
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(90deg, var(--primary) 60%, #181a1b 100%);
+    color: var(--white);
+    padding: 2.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+
+.logo {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #23272f;
+    background: none;
+    text-shadow: 0 2px 8px #e5e7eb;
+    transition: color 0.3s, letter-spacing 0.3s, text-shadow 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+.logo:hover {
+    color: #4b5563;
+    letter-spacing: 6px;
+    text-shadow: 0 4px 16px #bdbdbd;
+    transform: scale(1.04);
+}
+
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 2.5rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: color 0.2s, border-bottom 0.2s;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+}
+
+nav a.active, nav a:hover {
+    color: var(--highlight);
+    border-bottom: 2px solid var(--highlight);
+}
+
+main {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.about-highlight {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    background: var(--accent);
+    padding: 3rem 3rem 3rem 2.5rem;
+    border-radius: 24px;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.18);
+    margin-bottom: 3rem;
+    min-height: 320px;
+}
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--highlight);
+    box-shadow: 0 0 32px 0 #00000055;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+.profile-img:hover {
+    box-shadow: 0 0 64px 0 #bdbdbdcc;
+    border-color: var(--white);
+}
+
+.about-highlight h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px #23272f;
+}
+
+.about-highlight p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #bdbdbd;
+}
+
+.skills, .timeline, .interests {
+    background: var(--accent);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.14);
+    margin-bottom: 2rem;
+    /* Add border and spacing for a card-like look */
+    border-left: 5px solid var(--highlight);
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.skills:hover, .timeline:hover, .interests:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+    border-left: 5px solid var(--white);
+}
+
+.skills h2, .timeline h2, .interests h2 {
+    margin-bottom: 1rem;
+    color: var(--white);
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.skills ul, .timeline ul, .interests ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills li, .timeline li, .interests li {
+    margin-bottom: 0.7rem;
+    padding-left: 1.2rem;
+    position: relative;
+    color: var(--secondary);
+    font-size: 1.08rem;
+}
+
+.skills li::before, .timeline li::before, .interests li::before {
+    content: "•";
+    color: var(--highlight);
+    position: absolute;
+    left: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: linear-gradient(90deg, #181a1b 0%, var(--primary) 100%);
+    color: var(--white);
+    margin-top: 3rem;
+    border-radius: 0 0 24px 24px;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    box-shadow: 0 -2px 16px rgba(0,0,0,0.14);
+}
+
+@media (max-width: 900px) {
+    main {
+        padding: 0 1rem;
+    }
+    .about-highlight {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem 1rem;
+        gap: 2rem;
+    }
+    .profile-img {
+        margin-bottom: 1rem;
+    }
+    .skills, .timeline {.interests {
+        padding: 1rem;
+    }
+}
